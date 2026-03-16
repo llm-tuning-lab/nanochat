@@ -251,7 +251,7 @@ class GPT(nn.Module):
                 ve.to(dtype=COMPUTE_DTYPE)
 
     def _precompute_rotary_embeddings(self, seq_len, head_dim, base=100000, device=None):
-        # TODO: bump base theta more? e.g. 100K is more common more recently
+        # TODO(team): bump base theta more? e.g. 100K is more common more recently [2026-03]
         # autodetect the device from model embeddings
         if device is None:
             device = self.transformer.wte.weight.device
@@ -426,7 +426,7 @@ class GPT(nn.Module):
 
         if targets is not None:
             # training: given the targets, compute and return the loss
-            # TODO experiment with chunked cross-entropy?
+            # TODO(team): experiment with chunked cross-entropy? [2026-03]
             loss = F.cross_entropy(logits.view(-1, logits.size(-1)), targets.view(-1), ignore_index=-1, reduction=loss_reduction)
             return loss
         else:

@@ -24,7 +24,7 @@ class SmolTalk(Task):
         messages = row["messages"]
         # ---------------------------------------------------------------------
         # sanity checking asserts here
-        # TODO: we could remove these asserts later, for now just don't want any footguns
+        # TODO(team): we could remove these asserts later, for now just don't want any footguns [2026-03]
         # there is an optional system message at the beginning
         assert len(messages) >= 1
         first_message = messages[0]

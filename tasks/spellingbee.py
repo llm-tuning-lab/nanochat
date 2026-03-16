@@ -169,7 +169,7 @@ First spell the word out:
 Then count the occurrences of '{letter}':
 """
         # Little simulated loop of the solution process
-        # TODO: This is where the fun starts, we could simulate cute little mistakes
+        # TODO(team): This is where the fun starts, we could simulate cute little mistakes [2026-03]
         # and get the model to review its work and recover from them.
         # You might of course hope this could arise in RL too, but realistically you'd want to help it out a bit.
         running_count = 0
